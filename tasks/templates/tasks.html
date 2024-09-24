@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center mb-4 text-primary">TASKS</h1>
+            <ul class="list-group">
+                {% for task in tasks %}
+                <a class="list-group-item list-group-item-action border rounded shadow-sm mb-2" href="{% url 'task_details' task.id %}" style="background-color: #f8f9fa;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        {% if task.important %}
+                        <h3 class="text-danger fw-bold mb-0">{{ task.title }}</h3> <!-- Título importante en rojo -->
+                        <span class="badge bg-info text-dark">Important</span> <!-- Etiqueta para tareas importantes -->
+                        {% else %}
+                        <h5 class="text-dark mb-0">{{ task.title }}</h5> <!-- Título normal en oscuro -->
+                        {% endif %}
+                    </div>
+                    <p class="mb-1"><strong>Description:</strong> {{ task.description }}</p>
+                    <p class="mb-1"><strong>Author:</strong> {{ task.user.username }}</p>
+                    <p class="mb-0"><strong>Date completed:</strong> {{ task.datecompleted|date:'M j Y H:i' }}</p>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

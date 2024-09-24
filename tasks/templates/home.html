@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <section class="card card-body shadow-sm border-0">
+        <h1 class="display-4 mb-4">DJANGO APP </h1>
+        <p class="lead">
+            He desarrollado un <strong>gestor de tareas</strong> utilizando el framework <strong>Django</strong>, que permite a los usuarios gestionar sus tareas de manera eficiente, esta aplicacion la utilizare como plantilla para un mejor gestor y mejoras de UI y UX, esto son solo los avances. Para acceder a las funcionalidades del gestor, los usuarios deben registrarse y crear una cuenta. Solo aquellos que están <strong>autenticados</strong> pueden ingresar a las rutas <strong>/tasks</strong> y <strong>/tasks/create</strong>, lo que garantiza que cada usuario pueda gestionar sus propias tareas de manera segura.
+        </p>
+        
+        <p class="lead">
+            El sistema ofrece la capacidad de <strong>listar</strong>, <strong>agregar</strong>, <strong>actualizar</strong> y <strong>eliminar</strong> tareas, cubriendo así lo esencial de un <strong>CRUD</strong>. Los usuarios pueden ver todas las tareas que han creado, así como crear nuevas tareas mediante un formulario donde pueden ingresar detalles como el <strong>título</strong> y la <strong>descripción</strong>. También tienen la opción de modificar los detalles de tareas existentes o eliminarlas si ya no son necesarias. La experiencia de usuario es <strong>intuitiva</strong> y <strong>fluida</strong>, lo que facilita la gestión de tareas.
+        </p>
+        
+        <p class="lead">
+            En cuanto a la <strong>base de datos</strong>, se utiliza <strong>MySQL</strong> como sistema de gestión, lo que permite almacenar de manera eficiente la información de las tareas y los usuarios. La integración con Django se realiza a través de <strong>modelos</strong> que simplifican la interacción con la base de datos, permitiendo realizar consultas y manipulaciones de datos de manera sencilla.
+        </p>
+        
+        <p class="lead">
+            La <strong>interfaz de usuario</strong> está diseñada para ser clara y accesible, utilizando <strong>Bootstrap</strong> para asegurar que sea moderna y responsive, adaptándose a diferentes dispositivos y tamaños de pantalla.
+        </p>
+        
+        <p class="lead mb-0">
+            Este proyecto no solo me ha permitido practicar con Django, sino también familiarizarme con el uso de bases de datos y la implementación de <strong>características de seguridad</strong> en aplicaciones web.
+        </p>
+    </section>
+
+    <div class="text-center py-4">
+        <a class="btn btn-primary btn-lg mx-2" href="{% url 'signin' %}">
+            Log In
+        </a>
+        <a class="btn btn-secondary btn-lg mx-2" href="{% url 'signup' %}">
+            Sign Up
+        </a>
+    </div>
+</main>
+
+{% endblock %}
