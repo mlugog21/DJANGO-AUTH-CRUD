@@ -29,7 +29,7 @@ SECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://django-auth-crud-ot22.onrender.com/']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -89,10 +89,14 @@ WSGI_APPLICATION = 'djangocrud.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost/postgres',
-        conn_max_age = 600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'backend_django',
+        'USER': 'postgres',
+        'PASSWORD': '31261263Aa',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 
